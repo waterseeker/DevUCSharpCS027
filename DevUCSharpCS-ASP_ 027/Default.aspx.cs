@@ -19,7 +19,7 @@ namespace DevUCSharpCS_ASP__027
             string result = "";
 
             //Our intrepid hero gets a bonus first attack...
-            monsterHealth -= random.Next(1, 100);
+            monsterHealth -= random.Next(1, 10);
 
             int round = 0;
             result += "<br />Round: " + round;
