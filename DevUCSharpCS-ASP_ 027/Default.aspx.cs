@@ -28,7 +28,29 @@ namespace DevUCSharpCS_ASP__027
 
             //battle logic!
 
-            while (heroHealth > 0 && monsterHealth > 0)
+            //while (heroHealth > 0 && monsterHealth > 0)
+            //{
+            //    int heroDamage = random.Next(1, 10);
+            //    int monsterDamage = random.Next(1, 20);
+
+            //    monsterHealth -= heroDamage;
+            //    heroHealth -= monsterDamage;
+
+            //    result += "<br />Round: " + round++; //output for the round number
+
+            //    result += String.Format //output for hero damage
+            //        (
+            //        "<br />The hero causes {0} damage, leaving the monster with {1} health.",
+            //        heroDamage, monsterHealth);
+
+            //    result += String.Format //output for monster damage
+            //        (
+            //        "<br />The monster causes {0} damage, leaving the hero with {1} health.",
+            //        monsterDamage, heroHealth);
+            //}
+
+            //do while loop so the monster gets at least one attack!
+            do
             {
                 int heroDamage = random.Next(1, 10);
                 int monsterDamage = random.Next(1, 20);
@@ -36,7 +58,7 @@ namespace DevUCSharpCS_ASP__027
                 monsterHealth -= heroDamage;
                 heroHealth -= monsterDamage;
 
-                result += "<br />Round: " + ++round; //output for the round number
+                result += "<br />Round: " + round++; //output for the round number
 
                 result += String.Format //output for hero damage
                     (
@@ -48,8 +70,11 @@ namespace DevUCSharpCS_ASP__027
                     "<br />The monster causes {0} damage, leaving the hero with {1} health.",
                     monsterDamage, heroHealth);
             }
+            while (heroHealth > 0 && monsterHealth > 0) ;
 
-            if (heroHealth > 0)
+
+
+                if (heroHealth > 0)
             {
                 result += "<br />Huzzah! Our hero wins the day!";
             }
