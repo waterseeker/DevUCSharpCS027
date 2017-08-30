@@ -26,7 +26,28 @@ namespace DevUCSharpCS_ASP__027
             result += String.Format("<br />Hero attacks first, leaving monster with {0} health.",
                 monsterHealth);
 
-            //need battle logic here
+            //battle logic!
+
+            while (heroHealth > 0 && monsterHealth > 0)
+            {
+                int heroDamage = random.Next(1, 10);
+                int monsterDamage = random.Next(1, 20);
+
+                monsterHealth -= heroDamage;
+                heroHealth -= monsterDamage;
+
+                result += "<br />Round: " + ++round; //output for the round number
+
+                result += String.Format //output for hero damage
+                    (
+                    "<br />The hero causes {0} damage, leaving the monster with {1} health.",
+                    heroDamage, monsterHealth);
+
+                result += String.Format //output for monster damage
+                    (
+                    "<br />The monster causes {0} damage, leaving the hero with {1} health.",
+                    monsterDamage, heroHealth);
+            }
 
             if (heroHealth > 0)
             {
